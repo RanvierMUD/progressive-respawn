@@ -10,6 +10,6 @@
   "author": "Shawn Biddle <shawncplus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "rando-js": "^0.1.1"
+    "rando-js": "github:seanohue/rando#master"
   }
 }
