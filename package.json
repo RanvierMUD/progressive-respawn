@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "progressive-respawn",
+  "version": "1.0.0",
+  "description": "Ranvier behavior for constant area respawning",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RanvierMUD/progressive-respawn.git"
+  },
+  "author": "Shawn Biddle <shawncplus@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "rando-js": "^0.1.1"
+  }
+}

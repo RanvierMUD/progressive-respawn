@@ -1,6 +1,7 @@
 'use strict';
 
-const { Logger, RandomUtil } = require('ranvier');
+const { Logger } = require('ranvier');
+const { Random } = require('rando-js');
 
 /**
  * Behavior for having a constant respawn tick happening every [interval]
@@ -56,7 +57,7 @@ function _respawnRoom(state) {
       return;
     }
 
-    if (RandomUtil.probability(defaultNpc.respawnChance)) {
+    if (Random.probability(defaultNpc.respawnChance)) {
       try {
         this.spawnNpc(state, defaultNpc.id);
       } catch (err) {
@@ -83,7 +84,7 @@ function _respawnRoom(state) {
       return;
     }
 
-    if (RandomUtil.probability(defaultItem.respawnChance)) {
+    if (Random.probability(defaultItem.respawnChance)) {
       if (defaultItem.replaceOnRespawn) {
         this.items.forEach(item => {
           if (item.entityReference === defaultItem.id) {
