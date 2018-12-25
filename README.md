@@ -7,5 +7,31 @@ entity's respawn chance until it hits the entity's `maxLoad` for the room.
 
 ### Configuration
 
-`interval`: _`number`_ `(30)`
-:    Number of seconds between respawn tries
+Area-wide respawn interval is set in the `manifest.yml`:
+
+```yaml
+title: "Limbo"
+behaviors:
+  progressive-respawn:
+    # seconds between respawn
+    interval: 20
+```
+
+Configuring an item or NPC to respawn is done inside a room's definition, i.e., the area's `rooms.yml` file:
+
+```yaml
+- id: white
+  title: "White Room"
+  description: "A featureless white room."
+  npcs:
+    - id: "limbo:trainingdummy"
+      # % chance to respawn every interval
+      respawnChance: 25
+      # Maximum number of this NPC that can exist in the room at once
+      maxLoad: 3
+  items:
+    - id: "limbo:woodenchest"
+      respawnChance: 20
+      # when this chest respawns completely replace it so its contents get refreshed
+      replaceOnRespawn: true
+```
